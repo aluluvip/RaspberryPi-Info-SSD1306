@@ -49,10 +49,10 @@ try:
         mem = get_memory_usage()
         
         # 绘制文本
-        draw.text((0, 0), f"IP: {ip}", font=font, fill=255)
-        draw.text((0, 15), f"CPU: {cpu}%", font=font, fill=255)
-        draw.text((0, 30), f"Mem: {mem}", font=font, fill=255)
-        draw.text((0, 45), "Raspberry Pi 3B+", font=font, fill=255)
+        draw.text((10, 0), f"IP: {ip}", font=font, fill=255)
+        draw.text((10, 15), f"CPU: {cpu}%", font=font, fill=255)
+        draw.text((10, 30), f"Mem: {mem}", font=font, fill=255)
+        draw.text((10, 45), "Raspberry Pi 3B+", font=font, fill=255)
         
         # 显示图像
         display.image(image)
