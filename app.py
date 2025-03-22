@@ -38,6 +38,14 @@ def get_memory_usage():
     mem = psutil.virtual_memory()
     return f"{mem.percent}%"
 
+def get_cpu_temperature():
+    try:
+        with open('/sys/class/thermal/thermal_zone0/temp', 'r') as f:
+            temp = float(f.read()) / 1000.0
+        return f"{temp:.1f}°C"
+    except:
+        return "N/A"
+
 try:
     while True:
         # 清空缓冲区
@@ -52,7 +60,9 @@ try:
         draw.text((10, 0), f"IP: {ip}", font=font, fill=255)
         draw.text((10, 15), f"CPU: {cpu}%", font=font, fill=255)
         draw.text((10, 30), f"Mem: {mem}", font=font, fill=255)
-        draw.text((10, 45), "Raspberry Pi 3B+", font=font, fill=255)
+        # 获取CPU温度
+        temp = get_cpu_temperature()
+        draw.text((10, 45), f"CPU Temp: {temp}", font=font, fill=255)
         
         # 显示图像
         display.image(image)
