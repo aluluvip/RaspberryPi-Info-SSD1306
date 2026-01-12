@@ -65,5 +65,4 @@ pip3 install psutil
 - 如果显示不正常，请检查I2C连接和地址设置
 
 ## 许可证
-
-MIT License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
